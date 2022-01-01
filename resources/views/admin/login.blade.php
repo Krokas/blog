@@ -12,14 +12,14 @@
             @enderror
             <form method="POST" class="row g-3 needs-validation @if($errors->any()) was-validated @endif" novalidate>
                 <div class="mb-3">
-                    <label for="email" class="label">@lang('admin.login.email')</label>
+                    <label for="email" class="label">@lang('admin.labels.email')</label>
                     <input type="email" name="email" class="login__input" required value="{{ old('email') }}">
                     @error('email')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="label">@lang('admin.login.password')</label>
+                    <label for="password" class="label">@lang('admin.labels.password')</label>
                     <input type="password" name="password" class="login__input" required>
                     @error('password')
                         <div class="invalid-feedback">{{ $message }}</div>

@@ -21,4 +21,12 @@ class UserController extends Controller
 
         return redirect()->back()->withInput()->withErrors(['authenticate.failed' => __('admin.login.authenticate.failed')]);
     }
+
+    public function verify(Request $request) {
+        if ($request->hash) {
+            dd($request->hash);
+        }
+
+        abort(400);
+    }
 }
