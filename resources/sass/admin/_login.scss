@@ -1,0 +1,15 @@
+.login {
+    &__page {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__container {
+        @extend .container;
+        flex: 0 0;
+        font-size: 1.6rem;
+        max-width: 30rem;
+    }
+}
