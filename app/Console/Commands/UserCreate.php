@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\User;
+use App\Models\Verification;
 use App\Mail\UserVerify;
 use Illuminate\Support\Facades\Mail;
 
@@ -53,11 +54,20 @@ class UserCreate extends Command
         }
 
         $email = $data['email'];
+        $user = User::where('email', $email)->first();
 
-        if(!User::where('email', $email)->first()) {
+        if(!$user) {
 
             $hash = md5($email);
 
+            $user = new User();
+            $user->email = $email;
+            $user->save();
+
+            $verification = new Verification();
+            $verification->hash = $hash;
+            $verification->user_id = $user->id;
+            $verification->save();
 
             Mail::to($email)->send(new UserVerify(route('admin.user.verify', ['hash' => $hash])));
             $this->info(__('admin.user.created'));

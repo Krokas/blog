@@ -15,6 +15,12 @@ return [
         ],
     'user' => [
         'created' => 'User has been created.',
-        'exists' => 'User already exists.'
+        'exists' => 'User already exists.',
+        'verify' => [
+            'title' => 'Account verification',
+            'h1' => 'Verify your account',
+            'preamble' => 'By filling fields below and submitting the form for verification you will finalize your account creation.',
+            'submit' => 'Verify'
+        ]
     ]
 ];
