@@ -9,5 +9,6 @@
 </head>
 <body>
     @yield('content')
+    <script src="/js/admin.js"></script>
 </body>
 </html>
