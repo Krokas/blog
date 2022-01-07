@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EmailController;
+use App\Http\Controllers\Admin\DashboardController;
 
 
 
@@ -15,9 +16,7 @@ Route::post('user/verify/{hash}', [UserController::class, 'create']);
 
 
 Route::middleware('auth')->group(function() {
-    Route::get('/', function() {
-        return view('welcome');
-    })->name('admin.dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::prefix('email')->group(function() {
         Route::get('preview/{template}', [EmailController::class, 'preview']);

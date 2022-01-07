@@ -24,7 +24,6 @@ class UserController extends Controller
     public function login(LoginRequest $request) {
 
         if(Auth::attempt($request->only(['email', 'password']))) {
-            dd('success auth');
             return redirect()->route('admin.dashboard');
         }
 
