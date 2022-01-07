@@ -29,5 +29,14 @@ return [
         'personal' => 'Personal',
         'profile' => 'Profile',
         'logout' => 'Log-out'
+    ],
+    'header' => [
+        'search' => [
+            'placeholder' => 'Search'
+        ]
+    ],
+    'dashboard' => [
+        'title' => 'Dashboard',
+        'h1' => 'Dashboard'
     ]
 ];
