@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PostController;
 
 
 
@@ -21,5 +22,9 @@ Route::middleware('auth')->group(function() {
 
     Route::prefix('email')->group(function() {
         Route::get('preview/{template}', [EmailController::class, 'preview']);
+    });
+
+    Route::prefix('post')->group(function() {
+        Route::get('new', [PostController::class, 'create'])->name('admin.post.create');
     });
 });

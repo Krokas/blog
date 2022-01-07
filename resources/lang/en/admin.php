@@ -38,5 +38,11 @@ return [
     'dashboard' => [
         'title' => 'Dashboard',
         'h1' => 'Dashboard'
+    ],
+    'post' => [
+        'create' => [
+            'title' => 'New post',
+            'h1' => 'New post'
+        ]
     ]
 ];

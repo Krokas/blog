@@ -1,12 +1,17 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
     <div class="position-sticky pt-3">
       <ul class="nav flex-column">
-          @foreach (config('admin.sidebar.menu') as $menuItem)
-          <li class="nav-item">
+          @foreach (config('admin.sidebar.menu') as $key => $menuItem)
+          <li class="nav-item @if($key === 'posts') d-flex justify-content-between align-items-center mt-4 mb-1 @endif">
             <a class="nav-link @if(Route::current()->getName() === $menuItem['link']) active @endif" aria-current="page" href="@if($menuItem['link'] !== '#') {{route($menuItem['link'])}} @else {{ $menuItem['link']}} @endif">
               <i data-feather="{{ $menuItem['icon'] }}"></i>
               @lang($menuItem['title'])
             </a>
+            @if($key === 'posts')
+                <a href="{{ route('admin.post.create') }} ">
+                    <i data-feather="plus-circle"></i>
+                </a>
+            @endif
           </li>
           @endforeach
       </ul>
