@@ -7,4 +7,16 @@
         </h1>
         <div class="btn-toolbar mb-2 mb-md-0"></div>
     </div>
+    <div id="typing"></div>
+    <div class="post__edit">
+        <form>
+            <div class="mb-3">
+                <label for="title" class="form-label">@lang('admin.post.title')</label>
+                <input type="text" name="title" class="form-control">
+            </div>
+            <div class="mb-3">
+                <textarea name="body"></textarea>
+            </div>
+        </form>
+    </div>
 @endsection

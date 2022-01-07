@@ -1,0 +1,15 @@
+.post {
+    &__edit {
+        @extend .d-flex;
+        @extend .flex-wrap;
+        width: 100%;
+
+        form {
+            width: 100%;
+        }
+
+        .form-label {
+            font-size: 1.6rem;
+        }
+    }
+}

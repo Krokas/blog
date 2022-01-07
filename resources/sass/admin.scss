@@ -3,11 +3,17 @@
 @import "admin/login";
 @import "admin/header";
 @import "admin/sidebar";
+@import "admin/post";
 
 html,
 body {
     font-size: 10px;
 }
+
+html > body {
+    margin: 0;
+}
+
 $header-height: 4.8rem;
 .container-fill {
     height: calc(100vh - #{$header-height});
