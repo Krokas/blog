@@ -30,6 +30,12 @@ class UserController extends Controller
         return redirect()->back()->withInput()->withErrors(['authenticate.failed' => __('admin.login.authenticate.failed')]);
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('admin.login');
+    }
+
     public function verify(Request $request) {
         if ($request->hash) {
             $verification = Verification::where('hash', $request->hash)->first();

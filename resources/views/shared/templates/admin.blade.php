@@ -8,7 +8,19 @@
     <link href="/css/admin.css" rel="stylesheet">
 </head>
 <body>
-    @yield('content')
+    @if(Auth::check())
+    @include('shared.components.header')
+    <div class="container-fluid container-fill">
+        <div class="row">
+            @include('shared.components.sidebar')
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                @yield('content')
+            </main>
+        </div>
+    </div>
+    @else
+        @yield('content')
+    @endif
     <script src="/js/admin.js"></script>
 </body>
 </html>

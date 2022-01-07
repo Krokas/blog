@@ -16,6 +16,7 @@ Route::post('user/verify/{hash}', [UserController::class, 'create']);
 
 
 Route::middleware('auth')->group(function() {
+    Route::get('logout', [UserController::class, 'logout'])->name('admin.logout');
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::prefix('email')->group(function() {

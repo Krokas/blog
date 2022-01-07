@@ -22,5 +22,12 @@ return [
             'preamble' => 'By filling fields below and submitting the form for verification you will finalize your account creation.',
             'submit' => 'Verify'
         ]
+    ],
+    'sidebar' => [
+        'dashboard' => 'Dashboard',
+        'posts' => 'Posts',
+        'personal' => 'Personal',
+        'profile' => 'Profile',
+        'logout' => 'Log-out'
     ]
 ];
