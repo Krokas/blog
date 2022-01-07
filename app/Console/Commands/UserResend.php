@@ -9,21 +9,22 @@ use App\Models\Verification;
 use App\Mail\UserVerify;
 use Illuminate\Support\Facades\Mail;
 
-class UserCreate extends Command
+
+class UserResend extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'user:create {email}';
+    protected $signature = 'user:resend {email}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Use this command to create a new user.';
+    protected $description = 'Resend verification email for final verification.';
 
     /**
      * Create a new command instance.
@@ -42,9 +43,8 @@ class UserCreate extends Command
      */
     public function handle()
     {
-
         $rules = [
-            'email' => 'required|email|unique:users'
+            'email' => 'required|email|exists:users,email'
         ];
 
         $data = $this->arguments();
@@ -56,25 +56,25 @@ class UserCreate extends Command
         }
 
         $email = $data['email'];
+        $hash = md5(Carbon::now()->toDateTimeString().$email);
         $user = User::where('email', $email)->first();
 
-        if(!$user) {
-
-            $hash = md5(Carbon::now()->toDateTimeString().$email);
-
-            $user = new User();
-            $user->email = $email;
-            $user->save();
-
-            $verification = new Verification();
-            $verification->hash = $hash;
-            $verification->user_id = $user->id;
-            $verification->save();
-
-            Mail::to($email)->send(new UserVerify(route('admin.user.verify', ['hash' => $hash])));
-            $this->info(__('admin.user.created'));
-        } else {
-            $this->error(__('admin.user.exists'));
+        if(count($user->verifications) > 0) {
+            foreach($user->verifications as $verification) {
+                $verification->delete();
+            }
         }
+
+
+        $verification = new Verification();
+        $verification->hash = $hash;
+        $verification->user_id = $user->id;
+        $verification->save();
+
+
+        Mail::to($email)->send(new UserVerify(route('admin.user.verify', ['hash' => $hash])));
+        $this->info(__('admin.user.created'));
+
+        return 0;
     }
 }
