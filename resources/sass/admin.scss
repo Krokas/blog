@@ -1,8 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 
 @import "admin/login";
+@import "admin/header";
+@import "admin/sidebar";
 
 html,
 body {
     font-size: 10px;
+}
+$header-height: 4.8rem;
+.container-fill {
+    height: calc(100vh - #{$header-height});
+    > .row {
+        height: calc(100vh - #{$header-height});
+    }
 }
