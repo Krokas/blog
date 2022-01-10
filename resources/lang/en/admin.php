@@ -40,6 +40,8 @@ return [
         'h1' => 'Dashboard'
     ],
     'post' => [
+        'title' => 'Title',
+        'slug' => 'Slug',
         'create' => [
             'title' => 'New post',
             'h1' => 'New post'

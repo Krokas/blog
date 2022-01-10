@@ -10,13 +10,20 @@
     <div id="typing"></div>
     <div class="post__edit">
         <form>
-            <div class="mb-3">
-                <label for="title" class="form-label">@lang('admin.post.title')</label>
-                <input type="text" name="title" class="form-control">
+            <div class="row g-2 mb-3">
+                <div class="col-6">
+                    <label for="title" class="form-label">@lang('admin.post.title')</label>
+                    <input type="text" name="title" class="form-control">
+                </div>
+                <div class="col-6">
+                    <label for="slug" class="form-label">@lang('admin.post.slug')</label>
+                    <input type="text" name="slug" class="form-control">
+                </div>
             </div>
             <div class="mb-3">
                 <textarea name="body"></textarea>
             </div>
+            @csrf
         </form>
     </div>
 @endsection
