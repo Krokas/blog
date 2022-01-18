@@ -28,7 +28,11 @@ return [
         'posts' => 'Posts',
         'personal' => 'Personal',
         'profile' => 'Profile',
-        'logout' => 'Log-out'
+        'logout' => 'Log-out',
+        'post' => [
+            'heading' => 'Post control',
+            'save' => 'Save'
+        ]
     ],
     'header' => [
         'search' => [

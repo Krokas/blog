@@ -9,7 +9,7 @@
     </div>
     <div id="typing"></div>
     <div class="post__edit">
-        <form>
+        <form id="post" method="POST">
             <div class="row g-2 mb-3">
                 <div class="col-6">
                     <label for="title" class="form-label">@lang('admin.post.title')</label>

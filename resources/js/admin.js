@@ -1,6 +1,6 @@
 import "bootstrap";
-import "./editor";
-import "./slugify";
+import "./post";
+
 const feather = require("feather-icons");
 
 feather.icons.x.toSvg();

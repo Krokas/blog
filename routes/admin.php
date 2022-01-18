@@ -26,5 +26,6 @@ Route::middleware('auth')->group(function() {
 
     Route::prefix('post')->group(function() {
         Route::get('new', [PostController::class, 'create'])->name('admin.post.create');
+        Route::post('new', [PostController::class, 'saveNew']);
     });
 });

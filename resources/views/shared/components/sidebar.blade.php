@@ -29,5 +29,18 @@
           </li>
           @endforeach
       </ul>
+        @if(Route::current()->getName() === 'admin.post.create')
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 my-4 text-muted">
+            <span>@lang('admin.sidebar.post.heading')</span>
+        </h6>
+        <ul class="nav flex-column mb-2">
+            <li class="nav-item px-2">
+                <button class="btn btn-success" id="post-save-cta">
+                    <i data-feather="save"></i>
+                    @lang('admin.sidebar.post.save')
+                </button>
+            </li>
+        </ul>
+        @endif
     </div>
   </nav>
