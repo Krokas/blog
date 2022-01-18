@@ -16,6 +16,11 @@
             font-size: 1.6rem;
         }
     }
+
+    &__table {
+        @extend .table;
+        font-size: 1.6rem;
+    }
 }
 
 textarea {

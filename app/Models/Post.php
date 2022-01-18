@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+
+    protected $illable = [
+        'title',
+        'slug',
+        'body',
+        'active',
+        'position',
+        'user_id'
+    ];
 }

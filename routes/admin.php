@@ -25,7 +25,10 @@ Route::middleware('auth')->group(function() {
     });
 
     Route::prefix('post')->group(function() {
+        Route::get('list', [PostController::class, 'index'])->name('admin.post.index');
         Route::get('new', [PostController::class, 'create'])->name('admin.post.create');
         Route::post('new', [PostController::class, 'saveNew']);
+        Route::get('{post}', [PostController::class, 'edit'])->name('admin.post.update');
+        Route::post('{post}', [PostController::class, 'update']);
     });
 });

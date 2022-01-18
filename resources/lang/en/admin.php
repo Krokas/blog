@@ -49,6 +49,13 @@ return [
         'create' => [
             'title' => 'New post',
             'h1' => 'New post'
+        ],
+        'list' => [
+            'title' => 'Title',
+            'active' => 'Status',
+            'actions' => 'Actions',
+            'published' => 'Published',
+            'draft' => 'Draft'
         ]
     ]
 ];

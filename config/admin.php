@@ -11,7 +11,7 @@ return [
             'posts' => [
                 'title' => 'admin.sidebar.posts',
                 'icon' => 'framer',
-                'link' => '#'
+                'link' => 'admin.post.index'
             ]
         ],
         'personal' => [

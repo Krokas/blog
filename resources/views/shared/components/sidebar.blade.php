@@ -29,7 +29,7 @@
           </li>
           @endforeach
       </ul>
-        @if(Route::current()->getName() === 'admin.post.create')
+        @if(in_array(Route::current()->getName(), ["admin.post.create", "admin.post.update"]))
         <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 my-4 text-muted">
             <span>@lang('admin.sidebar.post.heading')</span>
         </h6>
