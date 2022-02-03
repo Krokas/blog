@@ -51,7 +51,8 @@ return [
             'h1' => 'New post'
         ],
         'list' => [
-            'title' => 'Title',
+            'title' => 'Posts',
+            'h1' => 'Posts',
             'active' => 'Status',
             'actions' => 'Actions',
             'published' => 'Published',
