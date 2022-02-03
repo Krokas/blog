@@ -55,7 +55,9 @@ return [
             'active' => 'Status',
             'actions' => 'Actions',
             'published' => 'Published',
-            'draft' => 'Draft'
+            'draft' => 'Draft',
+            'publish' => 'Publish',
+            'unpublish' => 'Unpublish'
         ]
     ]
 ];

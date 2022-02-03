@@ -35,7 +35,17 @@
                         @endif
                     </span>
                 </td>
-                <td></td>
+                <td>
+                    <button
+                        class="btn @if($post->active > 0) btn-danger @else btn-success @endif"
+                        data-post-toggle="{{$post->id}}">
+                        @if($post->active > 0)
+                            @lang('admin.post.list.unpublish')
+                        @else
+                            @lang('admin.post.list.publish')
+                        @endif
+                    </button>
+                </td>
               </tr>
               @endforeach
           </tbody>
