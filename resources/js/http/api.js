@@ -9,8 +9,6 @@ if (!baseElement) {
 const baseDomain = baseElement.getAttribute("href");
 const baseURL = `${baseDomain}/api`;
 
-console.log(baseURL);
-
 export default axios.create({
     baseURL,
 });
