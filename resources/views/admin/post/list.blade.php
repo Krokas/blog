@@ -45,6 +45,11 @@
                             @lang('admin.post.list.publish')
                         @endif
                     </button>
+                    <button
+                        class="btn btn-danger"
+                        data-delete="{{$post->id}}">
+                        @lang('admin.post.list.delete')
+                    </button>
                 </td>
               </tr>
               @endforeach

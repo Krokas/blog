@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Http\Requests\Admin\UpdatePostRequest;
-use App\Http\Requests\Admin\TogglePostRequest;
 use App\Http\Resources\Admin\Post as PostResource;
 
 class PostController extends Controller
@@ -60,11 +59,17 @@ class PostController extends Controller
         abort(400);
     }
 
-    public function apiToggle(Post $post, TogglePostRequest $request)
+    public function apiToggle(Post $post)
     {
         $toggleTo = $post->active > 0 ? 0 : 1;
         $post->active = $toggleTo;
         $post->save();
+        return response()->json(new PostResource($post));
+    }
+
+    public function apiDelete(Post $post)
+    {
+        $post->delete();
         return response()->json(new PostResource($post));
     }
 }

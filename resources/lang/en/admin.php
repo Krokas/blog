@@ -57,7 +57,8 @@ return [
             'published' => 'Published',
             'draft' => 'Draft',
             'publish' => 'Publish',
-            'unpublish' => 'Unpublish'
+            'unpublish' => 'Unpublish',
+            'delete' => 'Delete'
         ]
     ]
 ];

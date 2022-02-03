@@ -22,5 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::prefix('admin')->group(function() {
     Route::prefix('post')->group(function() {
         Route::post('{post}/toggle', [PostController::class, 'apiToggle'])->name('api.admin.post.toggle');
+        Route::delete('{post}/delete', [PostController::class, 'apiDelete'])->name('api.admin.post.delete');
     });
 });
