@@ -1,10 +1,17 @@
 @import "public/font";
+@import "public/card";
+@import "public/postList";
 
 :root {
     --dark: #303841;
     --dark-grey: #3a4750;
     --red: #d72323;
     --light: #eeeeee;
+}
+
+html,
+body {
+    font-family: 10px;
 }
 
 h1,

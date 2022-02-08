@@ -1,0 +1,13 @@
+.post-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-evenly;
+
+    &__item {
+        flex: 0 1;
+        // TODO: figure out correct width
+        width: 30%;
+    }
+}

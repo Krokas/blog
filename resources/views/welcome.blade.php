@@ -1,9 +1,11 @@
 @extends('shared.templates.public')
 @section('title', "Index")
 @section('content')
+    <ul class="post-list">
     @foreach ($posts as $post)
-        <article>
-            <h3>{{$post->title}}</h3>
-        </article>
+        <li class="post-list__item">
+            @include('shared.components.public.card', ['item' => $post])
+        </li>
     @endforeach
+    </ul>
 @endsection

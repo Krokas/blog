@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--dark);
+    &__image-container {
+        margin: 0 0 1.6rem;
+        height: 8rem;
+        border: 1px solid transparent;
+        border-radius: 0.5rem;
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--image-color);
+        }
+    }
+}
