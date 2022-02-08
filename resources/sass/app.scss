@@ -1,0 +1,24 @@
+@import "public/font";
+
+:root {
+    --dark: #303841;
+    --dark-grey: #3a4750;
+    --red: #d72323;
+    --light: #eeeeee;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+div,
+section,
+header,
+footer,
+body {
+    font-family: "Montserrat";
+}

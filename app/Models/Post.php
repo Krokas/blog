@@ -9,7 +9,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $illable = [
+    protected $fillable = [
         'title',
         'slug',
         'body',
@@ -17,4 +17,9 @@ class Post extends Model
         'position',
         'user_id'
     ];
+
+    public function scopeActive()
+    {
+        return $this->where('active', 1);
+    }
 }
