@@ -26,6 +26,7 @@ return [
     'sidebar' => [
         'dashboard' => 'Dashboard',
         'posts' => 'Posts',
+        'images' => 'Images',
         'personal' => 'Personal',
         'profile' => 'Profile',
         'logout' => 'Log-out',
@@ -60,6 +61,22 @@ return [
             'publish' => 'Publish',
             'unpublish' => 'Unpublish',
             'delete' => 'Delete'
+        ]
+    ],
+    'image' => [
+        'list' => [
+            'h1' => 'Images',
+            'title' => 'Images',
+            'add' => 'New Image'
+        ],
+        'create' => [
+            'h1' => 'New Image',
+            'title' => 'Add new image',
+            'submit' => 'Submit',
+            'labels' => [
+                'title' => 'Title (alt text)',
+                'image' => 'Image'
+            ]
         ]
     ]
 ];

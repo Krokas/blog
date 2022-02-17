@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ImageController;
 
 
 
@@ -30,5 +31,11 @@ Route::middleware('auth')->group(function() {
         Route::post('new', [PostController::class, 'saveNew']);
         Route::get('{post}', [PostController::class, 'edit'])->name('admin.post.update');
         Route::post('{post}', [PostController::class, 'update']);
+    });
+
+    Route::prefix('image')->group(function() {
+        Route::get('list', [ImageController::class, 'index'])->name('admin.image.index');
+        Route::get('new', [ImageController::class, 'create'])->name('admin.image.create');
+        Route::post('new', [ImageController::class, 'saveNew']);
     });
 });

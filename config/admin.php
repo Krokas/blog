@@ -12,6 +12,11 @@ return [
                 'title' => 'admin.sidebar.posts',
                 'icon' => 'framer',
                 'link' => 'admin.post.index'
+            ],
+            'images' => [
+                'title' => 'admin.sidebar.images',
+                'icon' => 'image',
+                'link' => 'admin.image.index'
             ]
         ],
         'personal' => [
