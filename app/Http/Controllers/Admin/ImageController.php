@@ -27,12 +27,12 @@ class ImageController extends Controller
         $extension = $request->image->extension();
         $hash = md5(Carbon::now()->toDateTimeString().$request->image->path());
         $fileName =  $hash.'.'.$extension;
-        $path = $request->image->storeAs('images', $fileName);
+        $path = $request->image->storeAs('public/images', $fileName);
         $hexColor = Image::getAverageColor($request->image);
 
         $image = new Image();
         $image->title = $request->input('title');
-        $image->path = $path;
+        $image->path = $fileName;
         $image->average_color = $hexColor;
         $image->save();
         return redirect()->route('admin.image.index');

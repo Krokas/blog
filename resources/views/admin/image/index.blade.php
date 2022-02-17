@@ -9,5 +9,11 @@
         <a class="btn btn-success btn-toolbar" href="{{ route('admin.image.create') }}">@lang('admin.image.list.add')</a>
     </div>
 </div>
-{{dump($images)}}
+<div class="row">
+    @foreach($images as $image)
+    <div class="col">
+        @include('shared.components.admin.imageCard', ['image' => $image])
+    </div>
+    @endforeach
+</div>
 @endsection
