@@ -1,6 +1,9 @@
-<div class="card" style="width: 28.8rem;" data-hex-color="{{$image->average_color}}">
-    <img src="{{Storage::disk('public')->url("images/".$image->path)}}" class="card-img-top" alt="{{$image->title}}">
-    <div class="card-body">
+<div class="card h-100" data-hex-color="{{$image->average_color}}">
+    <img
+        src="{{Storage::disk('public')->url("images/".$image->path)}}"
+        class="card-img-top mb-auto"
+        alt="{{$image->title}}">
+    <div class="card-body flex-grow-0 mt-auto">
         @if($image->title)
         <p class="card-text">{{$image->title}}</p>
         @endif

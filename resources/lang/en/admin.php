@@ -4,7 +4,9 @@ return [
     'labels' => [
         'name' => 'Name',
         'email' => 'Email',
-        'password' => 'Password'
+        'password' => 'Password',
+        'previous' => 'Previous',
+        'next' => 'Next'
     ],
     'login' => [
         'h1' => 'Login',
@@ -67,7 +69,8 @@ return [
         'list' => [
             'h1' => 'Images',
             'title' => 'Images',
-            'add' => 'New Image'
+            'add' => 'New Image',
+            'edit' => 'Edit'
         ],
         'create' => [
             'h1' => 'New Image',
