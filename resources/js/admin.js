@@ -3,6 +3,7 @@ import "./post";
 import "./togglePost";
 import "./deletePost";
 import "./averageColor";
+import "./deleteImage";
 
 const feather = require("feather-icons");
 

@@ -16,7 +16,6 @@ postDeleteButtons.forEach((toggleBtn) => {
 
 const deletePost = async (id) => {
     const response = await postAPI.adminDelete(id);
-    console.log(response);
     if (response.status === STATUS.OK) {
         location.reload();
     }

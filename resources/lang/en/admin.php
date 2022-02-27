@@ -70,7 +70,8 @@ return [
             'h1' => 'Images',
             'title' => 'Images',
             'add' => 'New Image',
-            'edit' => 'Edit'
+            'edit' => 'Edit',
+            'delete' => 'Delete'
         ],
         'create' => [
             'h1' => 'New Image',

@@ -8,5 +8,10 @@
         <p class="card-text">{{$image->title}}</p>
         @endif
         <a href="{{ route('admin.image.update', ['image' => $image->id]) }}" class="btn btn-primary">@lang('admin.image.list.edit')</a>
+        <button
+            class="btn btn-danger"
+            data-delete-image="{{$image->id}}">
+            @lang('admin.image.list.delete')
+        </button>
     </div>
 </div>

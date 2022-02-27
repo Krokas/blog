@@ -8,6 +8,8 @@ use App\Models\Image;
 use Illuminate\Support\Carbon;
 use App\Http\Requests\Admin\ImageRequest;
 use App\Http\Requests\Admin\UpdateImageRequest;
+use App\Http\Resources\Admin\Image as ImageResource;
+use Illuminate\Support\Facades\Storage;
 
 
 class ImageController extends Controller
@@ -49,5 +51,13 @@ class ImageController extends Controller
         $image->title = $request->input('title');
         $image->save();
         return redirect()->route('admin.image.index');
+    }
+
+    public function delete(Image $image)
+    {
+        Storage::disk('public')->delete('images/' . $image->path);
+        $image->delete();
+
+        return response()->json(new ImageResource($image));
     }
 }
