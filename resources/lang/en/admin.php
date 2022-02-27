@@ -80,6 +80,10 @@ return [
                 'title' => 'Title (alt text)',
                 'image' => 'Image'
             ]
+        ],
+        'update' => [
+            'h1' => 'Update image',
+            'title' => 'Update image'
         ]
     ]
 ];

@@ -37,5 +37,7 @@ Route::middleware('auth')->group(function() {
         Route::get('list', [ImageController::class, 'index'])->name('admin.image.index');
         Route::get('new', [ImageController::class, 'create'])->name('admin.image.create');
         Route::post('new', [ImageController::class, 'saveNew']);
+        Route::get('{image}', [ImageController::class, 'edit'])->name('admin.image.update');
+        Route::post('{image}', [ImageController::class, 'update']);
     });
 });

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Image;
 use Illuminate\Support\Carbon;
 use App\Http\Requests\Admin\ImageRequest;
+use App\Http\Requests\Admin\UpdateImageRequest;
 
 
 class ImageController extends Controller
@@ -34,6 +35,18 @@ class ImageController extends Controller
         $image->title = $request->input('title');
         $image->path = $fileName;
         $image->average_color = $hexColor;
+        $image->save();
+        return redirect()->route('admin.image.index');
+    }
+
+    public function edit(Image $image)
+    {
+        return view('admin.image.create')->with(['image' => $image]);
+    }
+
+    public function update(Image $image, UpdateImageRequest $request)
+    {
+        $image->title = $request->input('title');
         $image->save();
         return redirect()->route('admin.image.index');
     }

@@ -7,6 +7,6 @@
         @if($image->title)
         <p class="card-text">{{$image->title}}</p>
         @endif
-        <a href="#" class="btn btn-primary">@lang('admin.image.list.edit')</a>
+        <a href="{{ route('admin.image.update', ['image' => $image->id]) }}" class="btn btn-primary">@lang('admin.image.list.edit')</a>
     </div>
 </div>

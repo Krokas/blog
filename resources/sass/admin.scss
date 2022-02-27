@@ -4,6 +4,7 @@
 @import "admin/header";
 @import "admin/sidebar";
 @import "admin/post";
+@import "image";
 
 html,
 body {
@@ -20,4 +21,9 @@ $header-height: 4.8rem;
     > .row {
         height: calc(100vh - #{$header-height});
     }
+}
+
+:root {
+    --text-dark: var(--bs-dark);
+    --text-light: var(--bs-light);
 }
