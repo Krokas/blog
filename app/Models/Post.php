@@ -15,7 +15,8 @@ class Post extends Model
         'body',
         'active',
         'position',
-        'user_id'
+        'user_id',
+        'image_id'
     ];
 
     public function scopeActive()

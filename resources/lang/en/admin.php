@@ -6,7 +6,8 @@ return [
         'email' => 'Email',
         'password' => 'Password',
         'previous' => 'Previous',
-        'next' => 'Next'
+        'next' => 'Next',
+        'emptySelect' => 'Not Selected'
     ],
     'login' => [
         'h1' => 'Login',
@@ -49,6 +50,7 @@ return [
     'post' => [
         'title' => 'Title',
         'slug' => 'Slug',
+        'image' => 'Image',
         'create' => [
             'title' => 'New post',
             'h1' => 'New post'

@@ -30,6 +30,21 @@
                 </div>
             </div>
             <div class="mb-3">
+                <label for="image_id" class="form-label">@lang('admin.post.image')</label>
+                <select
+                    name="image_id"
+                    value="{{old('slug', isset($post) ? $post->image_id : null)}}"
+                    class="form-control">
+                    <option value="">@lang('admin.labels.emptySelect')</option>
+                    @foreach($images as $image)
+                        <option
+                            value="{{$image->id}}"
+                            @if(isset($post) && $image->id === $post->image_id) selected @endif
+                            >{{$image->id}}: {{ $image->title }}</option>
+                    @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
                 <textarea name="body">
                     {{ old('body', isset($post) ? $post->body : null) }}
                 </textarea>

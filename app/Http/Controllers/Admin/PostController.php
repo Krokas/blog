@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Http\Requests\Admin\UpdatePostRequest;
 use App\Http\Resources\Admin\Post as PostResource;
+use App\Models\Image;
 
 class PostController extends Controller
 {
@@ -20,7 +21,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('admin.post.create');
+        $images = Image::all();
+        return view('admin.post.create')->with(['images' => $images]);
     }
 
     public function saveNew(NewPostSaveRequest $request)
@@ -32,6 +34,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->slug = $request->input('slug');
         $post->body = $request->input('body');
+        $post->image_id = $request->input('image_id');
         $post->position = 0;
         $post->active = 0;
 
@@ -44,7 +47,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('admin.post.create')->with(['post' => $post]);
+        $images = Image::all();
+        return view('admin.post.create')->with(['post' => $post, 'images' => $images]);
     }
 
     public function update(Post $post, UpdatePostRequest $request)
@@ -52,6 +56,7 @@ class PostController extends Controller
         $post->title = $request->input('title');
         $post->slug = $request->input('slug');
         $post->body = $request->input('body');
+        $post->image_id = $request->input('image_id');
         if($post->save()) {
             // TODO: redirect with a Success message
             return redirect()->back();
