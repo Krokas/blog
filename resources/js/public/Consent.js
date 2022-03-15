@@ -51,7 +51,7 @@ class Consent {
     }
 
     getCookies() {
-        console.log(window.cookie.get("XSRF-TOKEN"));
+        console.log(window.cookie.get("myCookie"));
     }
 }
 
