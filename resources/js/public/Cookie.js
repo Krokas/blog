@@ -31,13 +31,11 @@ class Cookie {
         }
         document.cookie = `${name}=${value || ""}${expires}; path=/`;
         this.cookies = this.parseCookies();
-        console.log(this.cookies);
     }
 
     delete(name) {
         document.cookie = `${name}=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;`;
         this.cookies = this.parseCookies();
-        console.log(this.cookies);
     }
 }
 
