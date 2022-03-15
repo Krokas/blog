@@ -3,11 +3,14 @@
     padding: 0;
     display: flex;
     margin: 0 auto;
-    justify-content: space-evenly;
+    justify-content: center;
 
     &__item {
-        flex: 0 1;
+        flex: 1 0;
         // TODO: figure out correct width
-        width: 30%;
+        max-width: 25%;
+        &:not(:last-child) {
+            margin: 0 2rem 0 0;
+        }
     }
 }
