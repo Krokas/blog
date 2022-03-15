@@ -1,4 +1,4 @@
-<a href="#" class="card">
+<a href="{{ route('post', ['post' => $post]) }}" class="card">
         <div class="card__image-container"  style="--image-color: {{ $post->image ? $post->image->average_color : '#fff'}};">
             @if($post->image)
                 <img src="{{asset('/storage/images/' . $post->image->path)}}" alt="{{$post->image->title}}">
