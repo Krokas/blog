@@ -1,0 +1,35 @@
+@import "mixins";
+$consent-padding: 2rem;
+
+.consent {
+    visibility: hidden;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - (#{$consent-padding} * 2));
+    padding: $consent-padding;
+    background-color: var(--light);
+    z-index: 10;
+
+    @include mobile {
+        width: calc(100% - (#{$consent-padding}));
+        padding: $consent-padding / 2;
+    }
+
+    &--visible {
+        visibility: visible;
+    }
+
+    &__cta {
+        display: flex;
+        justify-content: end;
+
+        @include mobile {
+            justify-content: center;
+        }
+
+        > button:not(:last-child) {
+            margin: 0 1rem 0 0;
+        }
+    }
+}
