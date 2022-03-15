@@ -61,3 +61,21 @@
         src: $src;
     }
 }
+
+@mixin mobile {
+    @media screen and (max-width: 425px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin dark-mode {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+}

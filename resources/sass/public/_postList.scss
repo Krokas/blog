@@ -1,3 +1,5 @@
+@import "mixins";
+
 .post-list {
     list-style: none;
     padding: 0;
@@ -10,6 +12,9 @@
         // TODO: figure out correct width
         width: 20rem;
         margin: 0 2rem 2rem 0;
+        @include mobile {
+            margin: 0 0 2rem 0;
+        }
 
         &:nth-child(3n + 3),
         &:last-child {
