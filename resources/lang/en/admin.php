@@ -33,6 +33,7 @@ return [
         'personal' => 'Personal',
         'profile' => 'Profile',
         'logout' => 'Log-out',
+        'settings' => 'Settings',
         'post' => [
             'heading' => 'Post control',
             'save' => 'Save'
@@ -87,6 +88,18 @@ return [
         'update' => [
             'h1' => 'Update image',
             'title' => 'Update image'
+        ]
+    ],
+    'settings' => [
+        'h1' => 'Settings',
+        'title' => 'Site settings',
+        'privacy' => [
+            'consent' => [
+                'h2' => 'Consent Modal',
+                'title' => 'Title',
+                'body' => 'Text body',
+                'submit' => 'Save Consent Modal'
+            ]
         ]
     ]
 ];

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\EmailController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageController;
+use App\Http\Controllers\Admin\SettingsController;
 
 
 
@@ -40,4 +41,7 @@ Route::middleware('auth')->group(function() {
         Route::get('{image}', [ImageController::class, 'edit'])->name('admin.image.update');
         Route::post('{image}', [ImageController::class, 'update']);
     });
+
+    Route::get('settings', [SettingsController::class, 'index'])->name('admin.settings');
+    Route::post('settings', [SettingsController::class, 'saveConsentModal'])->name('admin.settings.consent_modal');
 });

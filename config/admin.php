@@ -17,6 +17,11 @@ return [
                 'title' => 'admin.sidebar.images',
                 'icon' => 'image',
                 'link' => 'admin.image.index'
+            ],
+            'settings' => [
+                'title' => 'admin.sidebar.settings',
+                'icon' => 'settings',
+                'link' => 'admin.settings'
             ]
         ],
         'personal' => [

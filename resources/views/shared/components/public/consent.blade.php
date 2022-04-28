@@ -1,10 +1,14 @@
 <section class="consent" style="visibility: hidden;" data-consent>
     <div class="consent__preamble">
-        <h2>This is a consent modal.</h2>
-        <p>some text regarding consent</p>
+        @if($consentModal['title'])
+            <h2>{{ $consentModal['title'] }}</h2>
+        @endif
+        @if($consentModal['body'])
+            {!! $consentModal['body'] !!}
+        @endif
     </div>
     <div class="consent__cta">
-        <button data-essentials class="button">Only Essentials</button>
-        <button data-analytics class="button button--secondary">Analytics included</button>
+        <button data-essentials class="button">@lang('settings.consent.essentials')</button>
+        <button data-analytics class="button button--secondary">@lang('settings.consent.analytics')</button>
     </div>
 </section>

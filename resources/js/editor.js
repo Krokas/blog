@@ -5,6 +5,7 @@ import "tinymce/skins/ui/oxide/skin.min.css";
 import "tinymce/skins/ui/oxide/content.min.css";
 import "tinymce/skins/content/default/content.css";
 import "tinymce/plugins/autoresize/plugin";
+import "tinymce/plugins/link/plugin";
 
 const styleFormats = [
     {
@@ -51,12 +52,15 @@ const styleFormats = [
 ];
 
 tinymce.init({
-    selector: '[name="body"]',
+    selector: "textarea",
     theme: "silver",
     menubar: false,
-    plugins: "autoresize",
-    min_height: 700,
+    plugins: "autoresize link",
+    toolbar:
+        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent",
+    min_height: 200,
     style_formats: styleFormats,
+    default_link_target: "_blank",
     setup: (editor) => {
         editor.on("keyup", () => {
             clearTimeout(typingTimer);
