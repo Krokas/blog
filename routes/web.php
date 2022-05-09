@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\App;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\PrivacyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +17,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
+
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
+Route::get(config('settings.privacy.route'), [PrivacyController::class, 'index'])->name('privacy');
 Route::get('{post:slug}', [PostController::class, 'index'])->name('post');

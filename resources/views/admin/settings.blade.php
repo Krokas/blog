@@ -30,4 +30,17 @@
             </div>
         </form>
     </div>
+    <div class="border-bottom admin-page">
+        <h2>@lang('admin.settings.privacy.privacy.h2')</h2>
+        <form method="POST" action="{{ route('admin.settings.privacy') }}">
+            @csrf
+            <div class="mb-3">
+                <label for="privacy_body">@lang('admin.settings.privacy.privacy.body_label')</label>
+                <textarea name="privacy_body"></textarea>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">@lang('admin.settings.privacy.privacy.submit')</button>
+            </div>
+        </form>
+    </div>
 @endsection

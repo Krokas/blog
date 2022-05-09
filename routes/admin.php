@@ -42,6 +42,9 @@ Route::middleware('auth')->group(function() {
         Route::post('{image}', [ImageController::class, 'update']);
     });
 
-    Route::get('settings', [SettingsController::class, 'index'])->name('admin.settings');
-    Route::post('settings', [SettingsController::class, 'saveConsentModal'])->name('admin.settings.consent_modal');
+    Route::prefix('settings')->group(function() {
+        Route::get('/', [SettingsController::class, 'index'])->name('admin.settings');
+        Route::post('consent', [SettingsController::class, 'saveConsentModal'])->name('admin.settings.consent_modal');
+        Route::post('privacy', [SettingsController::class, 'savePrivacy'])->name('admin.settings.privacy');
+    });
 });

@@ -99,6 +99,11 @@ return [
                 'title' => 'Title',
                 'body' => 'Text body',
                 'submit' => 'Save Consent Modal'
+            ],
+            'privacy' => [
+                'h2' => 'Privacy',
+                'body_label' => 'Privacy rules',
+                'submit' => 'Save privacy rules'
             ]
         ]
     ]

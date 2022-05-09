@@ -45,4 +45,9 @@ class SettingsController extends Controller
 
         return redirect()->route('admin.settings');
     }
+
+    public function savePrivacy(Request $request)
+    {
+        dd($request);
+    }
 }
