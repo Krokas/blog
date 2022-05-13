@@ -36,7 +36,9 @@
             @csrf
             <div class="mb-3">
                 <label for="privacy_body">@lang('admin.settings.privacy.privacy.body_label')</label>
-                <textarea name="privacy_body"></textarea>
+                <textarea name="privacy_body">
+                    {{ old('privacy_body', isset($privacy) ? $privacy : null) }}
+                </textarea>
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">@lang('admin.settings.privacy.privacy.submit')</button>

@@ -18,7 +18,9 @@ class SettingsController extends Controller
             'title' => $consentTitle->value,
             'body' => $consentBody->value
         ];
-        return view('admin.settings')->with(['consentModal' => $consentModal]);
+
+        $privacyBody = Setting::where('code', 'privacy_body')->select('value')->first();
+        return view('admin.settings')->with(['consentModal' => $consentModal, 'privacy' => $privacyBody->value]);
     }
 
     public function saveConsentModal(ConsentModalRequest $request)
@@ -48,6 +50,16 @@ class SettingsController extends Controller
 
     public function savePrivacy(Request $request)
     {
-        dd($request);
+        $body_code = 'privacy_body';
+        $body = Setting::where('code', $body_code)->first();
+        if(!$body) {
+            $body = new Setting();
+        }
+
+        $body->code = $body_code;
+        $body->value = $request->input($body_code);
+        $body->save();
+
+        return redirect()->route('admin.settings');
     }
 }
