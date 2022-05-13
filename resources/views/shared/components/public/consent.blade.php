@@ -1,5 +1,5 @@
-@if(Route::current()->getName() !== 'privacy')
-    <section class="consent" style="visibility: hidden;" data-consent>
+@if(Route::current()->getName() !== 'privacy' && $consentModal['privacyUpdatedAt'])
+    <section class="consent" style="visibility: hidden;" data-consent="{{$consentModal['privacyUpdatedAt']->updated_at}}">
         <div class="consent__preamble">
             @if($consentModal['title'])
                 <h2>{{ $consentModal['title'] }}</h2>

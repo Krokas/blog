@@ -3,7 +3,7 @@ class Cookie {
         this.cookies = this.parseCookies();
 
         this.get = this.get.bind(this);
-        this.set = this.set.bind(this);
+        this.setCookie = this.setCookie.bind(this);
         this.delete = this.delete.bind(this);
     }
 
@@ -22,7 +22,7 @@ class Cookie {
         return this.cookies.find((cookie) => cookie.key === name);
     }
 
-    set(name, value, days) {
+    setCookie(name, value, days) {
         var expires = "";
         if (days) {
             var date = new Date();

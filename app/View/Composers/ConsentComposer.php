@@ -23,9 +23,11 @@ class ConsentComposer
     {
         $consentTitle = Setting::where('code', 'consent_title')->select('value')->first();
         $consentBody = Setting::where('code', 'consent_body')->select('value')->first();
+        $privacyUpdatedAt = Setting::where('code', 'privacy_body')->select('updated_at')->first();
         $consentModal = [
             'title' => isset($consentTitle) ? $consentTitle->value : __('settings.consent.title'),
-            'body' => isset($consentBody) ? $consentBody->value : __('settings.consent.body')
+            'body' => isset($consentBody) ? $consentBody->value : __('settings.consent.body'),
+            'privacyUpdatedAt' => $privacyUpdatedAt
         ];
         $this->consent = $consentModal;
     }

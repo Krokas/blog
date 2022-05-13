@@ -2,7 +2,7 @@
 @section('title', __('privacy.title'))
 @section('content')
 <h1>@lang('privacy.title')</h1>
-<section>
+<section class="privacy">
     {!! $privacy->value !!}
 </section>
 @endsection
