@@ -1,10 +1,6 @@
 @import "mixins";
 
 .page {
-    width: (120rem / 1.6);
-    margin: 0 auto;
+    @include content-width;
     padding: 2rem 0;
-    @include mobile {
-        width: 100%;
-    }
 }

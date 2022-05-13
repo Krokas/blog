@@ -1,0 +1,32 @@
+@import "mixins";
+
+.footer {
+    margin: auto 0 0;
+    background-color: var(--light);
+
+    &__content {
+        @include content-width;
+        padding: 1.5rem 0;
+        @include mobile {
+            padding: 1.5rem 1rem;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    a {
+        font-weight: 500;
+        color: var(--dark);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--red);
+        }
+    }
+}

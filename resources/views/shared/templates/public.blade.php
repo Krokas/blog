@@ -11,6 +11,7 @@
     <div class="page">
         @yield('content')
     </div>
+    @include('shared.components.public.footer')
     @include('shared.components.public.consent')
     <script src="{{asset('js/app.js')}}"></script>
 </body>
