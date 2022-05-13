@@ -1,5 +1,8 @@
 @extends('shared.templates.public')
-@section('title', "Index")
+@section('title', __('privacy.title'))
 @section('content')
-Privacy
+<h1>@lang('privacy.title')</h1>
+<section>
+    {!! $privacy->value !!}
+</section>
 @endsection
