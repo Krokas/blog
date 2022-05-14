@@ -1,3 +1,5 @@
+import { Analytics } from "./Analytics";
+
 const CONSENT = {
     SELECTORS: {
         MODAL: "[data-consent]",
@@ -86,6 +88,16 @@ class Consent {
         window.cookie.setCookie("privacy", this.consentDate, 365);
         window.cookie.setCookie("privacy_level", level, 365);
         this.setConsentElementInvisible();
+
+        if (level === CONSENT.LEVEL.ANALYTICS) {
+            this.initAnalytics();
+        }
+    }
+
+    initAnalytics() {
+        if (!window.analytics) {
+            window.analytics = new Analytics();
+        }
     }
 }
 
