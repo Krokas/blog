@@ -1,4 +1,5 @@
 const titleInputElement = document.querySelector("input[name=title]");
+const nameInputElement = document.querySelector("input[name=name]");
 const slugInputElement = document.querySelector("input[name=slug]");
 
 String.prototype.slugify = function (separator = "-") {
@@ -12,9 +13,13 @@ String.prototype.slugify = function (separator = "-") {
 };
 
 if (titleInputElement && slugInputElement) {
-    console.log(titleInputElement, slugInputElement);
-
     titleInputElement.addEventListener("input", (_) => {
         slugInputElement.value = titleInputElement.value.slugify();
+    });
+}
+
+if (nameInputElement && slugInputElement) {
+    nameInputElement.addEventListener("input", (_) => {
+        slugInputElement.value = nameInputElement.value.slugify();
     });
 }

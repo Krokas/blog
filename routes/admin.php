@@ -51,5 +51,8 @@ Route::middleware('auth')->group(function() {
 
     Route::prefix('category')->group(function() {
         Route::get('list', [CategoryController::class, 'index'])->name('admin.category.list');
+        Route::get('new', [CategoryController::class, 'create'])->name('admin.category.create');
+        Route::post('new', [CategoryController::class, 'saveNew']);
+        Route::get('{category}', [CategoryController::class, 'update'])->name('admin.category.update');
     });
 });

@@ -110,7 +110,16 @@ return [
     ],
     'category' => [
         'list' => [
-            'title' => 'Categories'
+            'title' => 'Categories',
+            'add' => 'Add category'
+        ],
+        'create' => [
+            'title' => 'New Category',
+            'submit' => 'Save category'
+        ],
+        'form' => [
+            'name' => 'Name',
+            'slug' => 'Slug'
         ]
     ]
 ];
