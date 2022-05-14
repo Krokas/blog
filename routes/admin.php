@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImageController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\CategoryController;
 
 
 
@@ -46,5 +47,9 @@ Route::middleware('auth')->group(function() {
         Route::get('/', [SettingsController::class, 'index'])->name('admin.settings');
         Route::post('consent', [SettingsController::class, 'saveConsentModal'])->name('admin.settings.consent_modal');
         Route::post('privacy', [SettingsController::class, 'savePrivacy'])->name('admin.settings.privacy');
+    });
+
+    Route::prefix('category')->group(function() {
+        Route::get('list', [CategoryController::class, 'index'])->name('admin.category.list');
     });
 });

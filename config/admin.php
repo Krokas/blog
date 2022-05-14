@@ -18,6 +18,11 @@ return [
                 'icon' => 'image',
                 'link' => 'admin.image.index'
             ],
+            'categories' => [
+                'title' => 'admin.sidebar.categories',
+                'icon' => 'tag',
+                'link' => 'admin.category.list'
+            ],
             'settings' => [
                 'title' => 'admin.sidebar.settings',
                 'icon' => 'settings',

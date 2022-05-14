@@ -34,6 +34,7 @@ return [
         'profile' => 'Profile',
         'logout' => 'Log-out',
         'settings' => 'Settings',
+        'categories' => 'Categories',
         'post' => [
             'heading' => 'Post control',
             'save' => 'Save'
@@ -105,6 +106,11 @@ return [
                 'body_label' => 'Privacy rules',
                 'submit' => 'Save privacy rules'
             ]
+        ]
+    ],
+    'category' => [
+        'list' => [
+            'title' => 'Categories'
         ]
     ]
 ];

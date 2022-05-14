@@ -24,7 +24,7 @@ class Consent {
 
     init() {
         this.consentElement = document.querySelector(CONSENT.SELECTORS.MODAL);
-        this.consentDate = this.consentElement.dataset.consent;
+        this.consentDate = this.consentElement?.dataset?.consent;
         this.essentialButton = document.querySelector(
             CONSENT.SELECTORS.CTA.ESSENTIAL
         );
