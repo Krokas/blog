@@ -33,7 +33,7 @@
                 <label for="image_id" class="form-label">@lang('admin.post.image')</label>
                 <select
                     name="image_id"
-                    value="{{old('slug', isset($post) ? $post->image_id : null)}}"
+                    value="{{old('image_id', isset($post) ? $post->image_id : null)}}"
                     class="form-control">
                     <option value="">@lang('admin.labels.emptySelect')</option>
                     @foreach($images as $image)
@@ -42,6 +42,21 @@
                             @if(isset($post) && $image->id === $post->image_id) selected @endif
                             >{{$image->id}}: {{ $image->title }}</option>
                     @endforeach
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="category_id" class="form-label">@lang('admin.post.category')</label>
+                <select
+                    name="category_id"
+                    value="{{old('category_id', isset($post) ? $post->category_id: null)}}"
+                    class="form-control">
+                <option value="">@lang('admin.labels.emptySelect')</option>
+                @foreach($categories as $category)
+                    <option
+                        value="{{$category->id}}"
+                        @if(isset($post) && $category->id === $post->category_id) selected @endif
+                        >{{$category->name}}</option>
+                @endforeach
                 </select>
             </div>
             <div class="mb-3">

@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\NewPostSaveRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
+use App\Models\Category;
 use App\Http\Requests\Admin\UpdatePostRequest;
 use App\Http\Resources\Admin\Post as PostResource;
 use App\Models\Image;
@@ -22,7 +23,8 @@ class PostController extends Controller
     public function create()
     {
         $images = Image::all();
-        return view('admin.post.create')->with(['images' => $images]);
+        $categories = Category::all();
+        return view('admin.post.create')->with(['images' => $images, 'categories' => $categories]);
     }
 
     public function saveNew(NewPostSaveRequest $request)
@@ -35,6 +37,7 @@ class PostController extends Controller
         $post->slug = $request->input('slug');
         $post->body = $request->input('body');
         $post->image_id = $request->input('image_id');
+        $post->category_id = $request->input('category_id');
         $post->position = 0;
         $post->active = 0;
 
@@ -57,6 +60,7 @@ class PostController extends Controller
         $post->slug = $request->input('slug');
         $post->body = $request->input('body');
         $post->image_id = $request->input('image_id');
+        $post->category_id = $request->input('category_id');
         if($post->save()) {
             // TODO: redirect with a Success message
             return redirect()->back();
