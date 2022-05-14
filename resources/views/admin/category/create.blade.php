@@ -19,11 +19,11 @@
     @csrf
     <div class="mb-3">
         <label for="name">@lang('admin.category.form.name')</label>
-        <input type="text" name="name" class="form-control" value="{{old('name')}}">
+        <input type="text" name="name" class="form-control" value="{{old('name', isset($category['name']) ? $category['name'] : null)}}">
     </div>
     <div class="mb-3">
         <label for="slug">@lang('admin.category.form.slug')</label>
-        <input type="text" name="slug" class="form-control" value="{{old('slug')}}">
+        <input type="text" name="slug" class="form-control" value="{{old('slug', isset($category['slug']) ? $category['slug'] : null)}}">
     </div>
     <div class="mb-3">
         <button type="submit" class="btn btn-primary">

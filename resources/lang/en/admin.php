@@ -117,6 +117,9 @@ return [
             'title' => 'New Category',
             'submit' => 'Save category'
         ],
+        'update' => [
+            'title' => 'Update category'
+        ],
         'form' => [
             'name' => 'Name',
             'slug' => 'Slug'

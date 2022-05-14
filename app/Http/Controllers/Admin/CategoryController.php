@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\CategoryRequest;
 use App\Models\Category;
+use App\Http\Requests\Admin\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
@@ -30,5 +31,21 @@ class CategoryController extends Controller
             return redirect()->route('admin.category.list');
         }
         return abort(400);
+    }
+
+    public function edit(Category $category)
+    {
+        return view('admin.category.create')->with(['category' => $category]);
+    }
+
+    public function update(Category $category, CategoryUpdateRequest $request)
+    {
+        $category->name = $request->input('name');
+        $category->slug = $request->input('slug');
+
+        if ($category->save()) {
+            return redirect()->route('admin.category.list');
+        }
+        return redirect()->back();
     }
 }
