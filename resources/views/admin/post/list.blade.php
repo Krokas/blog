@@ -45,11 +45,12 @@
                             @lang('admin.post.list.publish')
                         @endif
                     </button>
-                    <button
+                    <a
                         class="btn btn-danger"
-                        data-delete="{{$post->id}}">
+                        href="{{route('admin.post.delete', ['post' => $post->id])}}"
+                        data-confirm="@lang('admin.post.delete.confirm')">
                         @lang('admin.post.list.delete')
-                    </button>
+                    </a>
                 </td>
               </tr>
               @endforeach

@@ -1,9 +1,9 @@
 import "bootstrap";
 import "./post";
 import "./togglePost";
-import "./deletePost";
 import "./averageColor";
 import "./deleteImage";
+import "./confirm";
 
 const feather = require("feather-icons");
 

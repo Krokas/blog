@@ -53,9 +53,13 @@ return [
         'title' => 'Title',
         'slug' => 'Slug',
         'image' => 'Image',
+        'category' => 'Category',
         'create' => [
             'title' => 'New post',
             'h1' => 'New post'
+        ],
+        'delete' => [
+            'confirm' => 'Do you really want to delete this post?'
         ],
         'list' => [
             'title' => 'Posts',
@@ -123,6 +127,15 @@ return [
         'form' => [
             'name' => 'Name',
             'slug' => 'Slug'
+        ],
+        'list' => [
+            'actions' => 'Actions',
+            'delete' => 'Delete',
+            'add' => 'New category',
+            'title' => 'Categories'
+        ],
+        'confirm' => [
+            'delete' => 'Do you really want to delete this category?'
         ]
     ]
 ];

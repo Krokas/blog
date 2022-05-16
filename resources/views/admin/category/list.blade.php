@@ -17,6 +17,7 @@
               <th scope="col">#</th>
               <th scope="col">@lang('admin.category.form.name')</th>
               <th scope="col">@lang('admin.category.form.slug')</th>
+              <th scope="col">@lang('admin.category.list.actions')</th>
             </tr>
           </thead>
           <tbody>
@@ -30,6 +31,14 @@
                 </td>
                 <td>
                     <span>{{ $category->slug }}</span>
+                </td>
+                <td>
+                    <a
+                    href="{{route('admin.category.delete', ['category' => $category->id])}}"
+                    class="btn btn-danger"
+                    data-confirm="@lang('admin.category.confirm.delete')">
+                        @lang('admin.category.list.delete')
+                    </a>
                 </td>
               </tr>
               @endforeach

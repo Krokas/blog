@@ -51,7 +51,8 @@ class PostController extends Controller
     public function edit(Post $post)
     {
         $images = Image::all();
-        return view('admin.post.create')->with(['post' => $post, 'images' => $images]);
+        $categories = Category::all();
+        return view('admin.post.create')->with(['post' => $post, 'images' => $images, 'categories' => $categories]);
     }
 
     public function update(Post $post, UpdatePostRequest $request)
@@ -76,9 +77,9 @@ class PostController extends Controller
         return response()->json(new PostResource($post));
     }
 
-    public function apiDelete(Post $post)
+    public function delete(Post $post)
     {
         $post->delete();
-        return response()->json(new PostResource($post));
+        return redirect()->route('admin.post.index');
     }
 }

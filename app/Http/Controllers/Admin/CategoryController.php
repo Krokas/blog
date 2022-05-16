@@ -48,4 +48,10 @@ class CategoryController extends Controller
         }
         return redirect()->back();
     }
+
+    public function delete(Category $category)
+    {
+        $category->delete();
+        return redirect()->route('admin.category.list');
+    }
 }

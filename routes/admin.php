@@ -31,8 +31,9 @@ Route::middleware('auth')->group(function() {
         Route::get('list', [PostController::class, 'index'])->name('admin.post.index');
         Route::get('new', [PostController::class, 'create'])->name('admin.post.create');
         Route::post('new', [PostController::class, 'saveNew']);
-        Route::get('{post}', [PostController::class, 'edit'])->name('admin.post.update');
-        Route::post('{post}', [PostController::class, 'update']);
+        Route::get('{post}/edit', [PostController::class, 'edit'])->name('admin.post.update');
+        Route::post('{post}/edit', [PostController::class, 'update']);
+        Route::get('{post}/delete', [PostController::class, 'delete'])->name('admin.post.delete');
     });
 
     Route::prefix('image')->group(function() {
@@ -53,7 +54,8 @@ Route::middleware('auth')->group(function() {
         Route::get('list', [CategoryController::class, 'index'])->name('admin.category.list');
         Route::get('new', [CategoryController::class, 'create'])->name('admin.category.create');
         Route::post('new', [CategoryController::class, 'saveNew']);
-        Route::get('{category}', [CategoryController::class, 'edit'])->name('admin.category.update');
-        Route::post('{category}', [CategoryController::class, 'update']);
+        Route::get('{category}/edit', [CategoryController::class, 'edit'])->name('admin.category.update');
+        Route::post('{category}/edit', [CategoryController::class, 'update']);
+        Route::get('{category}/delete', [CategoryController::class, 'delete'])->name('admin.category.delete');
     });
 });
