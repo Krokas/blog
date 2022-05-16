@@ -71,6 +71,12 @@ return [
             'publish' => 'Publish',
             'unpublish' => 'Unpublish',
             'delete' => 'Delete'
+        ],
+        'errors' => [
+            'no-posts' => [
+                'title' => 'No posts',
+                'preamble' => 'Create a post and you will find it here after saving.'
+            ]
         ]
     ],
     'image' => [
@@ -93,6 +99,12 @@ return [
         'update' => [
             'h1' => 'Update image',
             'title' => 'Update image'
+        ],
+        'errors' => [
+            'no-images' => [
+                'title' => 'There are no images',
+                'preamble' => 'Upload some images and you will see them here.'
+            ]
         ]
     ],
     'settings' => [
@@ -136,6 +148,12 @@ return [
         ],
         'confirm' => [
             'delete' => 'Do you really want to delete this category?'
+        ],
+        'errors' => [
+            'no-categories' => [
+                'title' => 'No categories',
+                'preamble' => 'There are no categories. Before creating a post there needs to be atleast one category to assign post to.'
+            ]
         ]
     ]
 ];

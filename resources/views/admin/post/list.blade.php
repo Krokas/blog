@@ -57,6 +57,16 @@
           </tbody>
     </table>
     @else
-        {{-- //TODO: message for no pots. --}}
+    <div class="row justify-content-center">
+        <div class="col-6">
+            @include('shared.components.admin.warning',
+            [
+                'icon' => 'cloud-rain',
+                'variant' => 'warning',
+                'title' => __('admin.post.errors.no-posts.title'),
+                'message' => __('admin.post.errors.no-posts.preamble')
+            ])
+        </div>
+    </div>
     @endif
 @endsection
