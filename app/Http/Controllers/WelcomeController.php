@@ -9,7 +9,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::active()->with(['image'])->get();
+        $posts = Post::active()->with(['image', 'category'])->get();
         return view('welcome')->with(['posts' => $posts]);
     }
 }

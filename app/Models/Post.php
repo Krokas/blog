@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Models\Image;
+use App\Models\Category;
 
 class Post extends Model
 {
@@ -29,5 +30,10 @@ class Post extends Model
     public function image()
     {
         return $this->belongsTo(Image::class);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

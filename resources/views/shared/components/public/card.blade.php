@@ -5,10 +5,11 @@
             @endif
         </div>
         <div class="card__preamble">
+            @if($post->category)
             <div class="card__category">
-                {{-- TODO: implement categories --}}
-                <span class="card__badge">{{__('categories.politics')}}</span>
+                <span class="card__badge">{{$post->category->name}}</span>
             </div>
+            @endif
             <h3>{{$item->title}}</h3>
         </div>
 </a>
