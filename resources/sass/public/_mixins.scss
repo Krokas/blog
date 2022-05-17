@@ -83,7 +83,7 @@
 @mixin content-width {
     width: (120rem / 1.6);
     margin: 0 auto;
-    @include mobile {
+    @include tablet {
         width: 100%;
     }
 }

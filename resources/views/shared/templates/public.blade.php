@@ -8,6 +8,7 @@
     <title>@yield('title')</title>
 </head>
 <body>
+    @include('shared.components.public.header')
     <div class="page">
         @yield('content')
     </div>

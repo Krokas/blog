@@ -58,6 +58,9 @@ return [
             'title' => 'New post',
             'h1' => 'New post'
         ],
+        'update' => [
+            'h1' => 'Edit post'
+        ],
         'delete' => [
             'confirm' => 'Do you really want to delete this post?'
         ],

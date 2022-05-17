@@ -1,0 +1,30 @@
+.header {
+    padding: 1.5rem 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 2rem;
+    &__center-container {
+        position: relative;
+        > a {
+            top: 10px;
+            position: absolute;
+            &:hover {
+                .header__welcome {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+    &__welcome {
+        width: 30px;
+        height: 30px;
+        line-height: 0;
+        padding: 0;
+        margin: 0;
+        border: 2px solid var(--dark);
+        content: "";
+        transform: rotate(-45deg);
+        transition: all 0.5s ease;
+    }
+}
