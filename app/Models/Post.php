@@ -19,7 +19,8 @@ class Post extends Model
         'active',
         'position',
         'user_id',
-        'image_id'
+        'image_id',
+        'published_at'
     ];
 
     public function scopeActive()

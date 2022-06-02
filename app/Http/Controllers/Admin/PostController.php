@@ -11,6 +11,7 @@ use App\Models\Category;
 use App\Http\Requests\Admin\UpdatePostRequest;
 use App\Http\Resources\Admin\Post as PostResource;
 use App\Models\Image;
+use Illuminate\Support\Carbon;
 
 class PostController extends Controller
 {
@@ -73,6 +74,9 @@ class PostController extends Controller
     {
         $toggleTo = $post->active > 0 ? 0 : 1;
         $post->active = $toggleTo;
+        if ($toggleTo == 1) {
+            $post->published_at = Carbon::now()->toDateTimeString();
+        }
         $post->save();
         return response()->json(new PostResource($post));
     }

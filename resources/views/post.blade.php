@@ -2,7 +2,14 @@
 @section('title', $post->title)
 @section('content')
     <div class="post">
-        <h1>{{$post->title}}</h1>
+        <section class="post__preamble">
+            <h1>{{$post->title}}</h1>
+            <p>
+                @if($post->published_at)
+                    {{Carbon::parse($post->published_at)->toDateString()}}
+                @endif
+            </p>
+        </section>
         <section>
             {!!$post->body!!}
         </section>

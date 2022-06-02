@@ -14,6 +14,7 @@
               <th scope="col">#</th>
               <th scope="col">@lang('admin.post.list.title')</th>
               <th scope="col">@lang('admin.post.list.active')</th>
+              <th scope="col">@lang('admin.post.list.published_at')</th>
               <th scope="col">@lang('admin.post.list.actions')</th>
             </tr>
           </thead>
@@ -34,6 +35,11 @@
                             @lang('admin.post.list.draft')
                         @endif
                     </span>
+                </td>
+                <td>
+                    @if($post->published_at)
+                        {{ $post->published_at }}
+                    @endif
                 </td>
                 <td>
                     <button
