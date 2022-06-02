@@ -6,6 +6,7 @@ import "tinymce/skins/ui/oxide/content.min.css";
 import "tinymce/skins/content/default/content.css";
 import "tinymce/plugins/autoresize/plugin";
 import "tinymce/plugins/link/plugin";
+import { getImageGallery } from "./images";
 
 const styleFormats = [
     {
@@ -55,9 +56,9 @@ tinymce.init({
     selector: "textarea",
     theme: "silver",
     menubar: false,
-    plugins: "autoresize link",
+    plugins: "autoresize link custom-image",
     toolbar:
-        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent",
+        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent | custom-image",
     min_height: 200,
     style_formats: styleFormats,
     default_link_target: "_blank",
@@ -76,6 +77,18 @@ tinymce.init({
             typingTimer = setTimeout(doneTyping, doneTypingInterval);
         });
     },
+    content_css: "/css/editor.css",
+});
+
+tinymce.PluginManager.add("custom-image", (editor, url) => {
+    editor.ui.registry.addButton("custom-image", {
+        tooltip: "Uploaded image",
+        text: null,
+        icon: "image",
+        onAction: () => {
+            getImageGallery(tinymce);
+        },
+    });
 });
 
 var typingTimer;

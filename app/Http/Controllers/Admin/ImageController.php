@@ -60,4 +60,9 @@ class ImageController extends Controller
 
         return response()->json(new ImageResource($image));
     }
+
+    public function getAll()
+    {
+        return new ImageResource(Image::all());
+    }
 }

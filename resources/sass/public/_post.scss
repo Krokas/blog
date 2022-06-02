@@ -13,4 +13,13 @@
     &__preamble {
         margin: 0 0 2rem;
     }
+
+    &__image-container {
+        width: 100%;
+
+        > img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }

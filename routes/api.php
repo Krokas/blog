@@ -27,5 +27,6 @@ Route::prefix('admin')->group(function() {
 
     Route::prefix('image')->group(function() {
         Route::delete('{image}', [ImageController::class, 'delete'])->name('api.admin.image.delete');
+        Route::get('all', [ImageController::class, 'getAll']);
     });
 });

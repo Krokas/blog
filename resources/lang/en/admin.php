@@ -73,7 +73,8 @@ return [
             'draft' => 'Draft',
             'publish' => 'Publish',
             'unpublish' => 'Unpublish',
-            'delete' => 'Delete'
+            'delete' => 'Delete',
+            'published_at' => 'Published at'
         ],
         'errors' => [
             'no-posts' => [
