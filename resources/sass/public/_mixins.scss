@@ -84,6 +84,6 @@
     width: (120rem / 1.6);
     margin: 0 auto;
     @include tablet {
-        width: 100%;
+        width: calc(100% - 2rem);
     }
 }
