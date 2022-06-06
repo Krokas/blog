@@ -6,6 +6,7 @@ import "tinymce/skins/ui/oxide/content.min.css";
 import "tinymce/skins/content/default/content.css";
 import "tinymce/plugins/autoresize/plugin";
 import "tinymce/plugins/link/plugin";
+import "tinymce/plugins/code/plugin";
 import { getImageGallery } from "./images";
 
 const styleFormats = [
@@ -56,9 +57,9 @@ tinymce.init({
     selector: "textarea",
     theme: "silver",
     menubar: false,
-    plugins: "autoresize link custom-image",
+    plugins: "autoresize link custom-image code",
     toolbar:
-        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent | custom-image",
+        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent | custom-image code",
     min_height: 200,
     style_formats: styleFormats,
     default_link_target: "_blank",
