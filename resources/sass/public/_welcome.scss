@@ -1,0 +1,8 @@
+.notice {
+    margin: auto;
+    text-align: center;
+
+    > p {
+        color: var(--dark-grey);
+    }
+}
