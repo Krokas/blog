@@ -39,6 +39,8 @@ export const getImageGallery = async (tinymce) => {
                     imageElement.alt = imageAlt;
                     imageContainer.append(imageElement);
                     container.append(imageContainer);
+                    const extraParagraphElement = document.createElement("p");
+                    container.append(extraParagraphElement);
                     tinymce.activeEditor.insertContent(container.innerHTML);
                     tinymce.activeEditor.windowManager.close();
                 } else {
