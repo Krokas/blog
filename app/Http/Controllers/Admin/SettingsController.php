@@ -15,8 +15,8 @@ class SettingsController extends Controller
         $consentTitle = Setting::where('code', 'consent_title')->select('value')->first();
         $consentBody = Setting::where('code', 'consent_body')->select('value')->first();
         $consentModal = [
-            'title' => $consentTitle->value,
-            'body' => $consentBody->value
+            'title' => $consentTitle ? $consentTitle->value : null,
+            'body' => $consentBody ? $consentBody->value : null
         ];
 
         $privacyBody = Setting::where('code', 'privacy_body')->select('value')->first();
