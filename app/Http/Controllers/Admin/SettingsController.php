@@ -20,7 +20,7 @@ class SettingsController extends Controller
         ];
 
         $privacyBody = Setting::where('code', 'privacy_body')->select('value')->first();
-        return view('admin.settings')->with(['consentModal' => $consentModal, 'privacy' => $privacyBody->value]);
+        return view('admin.settings')->with(['consentModal' => $consentModal, 'privacy' => $privacyBody ? $privacyBody->value : null]);
     }
 
     public function saveConsentModal(ConsentModalRequest $request)
