@@ -10,11 +10,13 @@
 
 </head>
 <body>
-    @include('shared.components.public.header')
-    <div class="page">
-        @yield('content')
+    <div id="app">
+        @include('shared.components.public.header')
+        <main class="page">
+            @yield('content')
+        </main>
+        @include('shared.components.public.footer')
+        @include('shared.components.public.consent')
     </div>
-    @include('shared.components.public.footer')
-    @include('shared.components.public.consent')
 </body>
 </html>
