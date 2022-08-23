@@ -14,3 +14,10 @@
         </div>
     </section>
 @endif
+<privacy-modal
+    privacy-updated-at="{{$consentModal['privacyUpdatedAt']->updated_at}}"
+    title="{{$consentModal['title']}}"
+    body="{{$consentModal['body']}}"
+    essentials-button-label="@lang('settings.consent.essentials')"
+    analytics-button-label="@lang('settings.consent.analytics')"
+/>
