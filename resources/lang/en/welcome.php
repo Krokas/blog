@@ -2,7 +2,7 @@
 return [
     'title' => 'Kondrackis.lt',
     'no-posts' => [
-        'title' => 'Nothing here to see',
+        'title' => 'Nothing to see here.',
         'preamble' => 'Nothing to see. move along citizen.'
     ]
 ];

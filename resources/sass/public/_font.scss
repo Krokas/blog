@@ -1,39 +1,105 @@
 @import "./mixins";
 
-@include font-face(Montserrat, fonts/Montserrat-Thin, 100, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-ExtraLight, 200, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-Light, 300, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-Regular, 400, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-Medium, 500, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-SemiBold, 600, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-Bold, 700, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-ExtraBold, 800, normal, ttf);
-@include font-face(Montserrat, fonts/Montserrat-Black, 900, normal, ttf);
-
-@include font-face(Montserrat, fonts/Montserrat-ThinItalic, 100, italic, ttf);
+@include font-face(Montserrat, public/fonts/Montserrat-Thin, 100, normal, ttf);
 @include font-face(
     Montserrat,
-    fonts/Montserrat-ExtraLightItalic,
+    public/fonts/Montserrat-ExtraLight,
+    200,
+    normal,
+    ttf
+);
+@include font-face(Montserrat, public/fonts/Montserrat-Light, 300, normal, ttf);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-Regular,
+    400,
+    normal,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-Medium,
+    500,
+    normal,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-SemiBold,
+    600,
+    normal,
+    ttf
+);
+@include font-face(Montserrat, public/fonts/Montserrat-Bold, 700, normal, ttf);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-ExtraBold,
+    800,
+    normal,
+    ttf
+);
+@include font-face(Montserrat, public/fonts/Montserrat-Black, 900, normal, ttf);
+
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-ThinItalic,
+    100,
+    italic,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-ExtraLightItalic,
     200,
     italic,
     ttf
 );
-@include font-face(Montserrat, fonts/Montserrat-LightItalic, 300, italic, ttf);
-@include font-face(Montserrat, fonts/Montserrat-MediumItalic, 400, italic, ttf);
-@include font-face(Montserrat, fonts/Montserrat-MediumItalic, 500, italic, ttf);
 @include font-face(
     Montserrat,
-    fonts/Montserrat-SemiBoldItalic,
+    public/fonts/Montserrat-LightItalic,
+    300,
+    italic,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-MediumItalic,
+    400,
+    italic,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-MediumItalic,
+    500,
+    italic,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-SemiBoldItalic,
     600,
     italic,
     ttf
 );
-@include font-face(Montserrat, fonts/Montserrat-BoldItalic, 700, italic, ttf);
 @include font-face(
     Montserrat,
-    fonts/Montserrat-ExtraBoldItalic,
+    public/fonts/Montserrat-BoldItalic,
+    700,
+    italic,
+    ttf
+);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-ExtraBoldItalic,
     800,
     italic,
     ttf
 );
-@include font-face(Montserrat, fonts/Montserrat-BlackItalic, 900, italic, ttf);
+@include font-face(
+    Montserrat,
+    public/fonts/Montserrat-BlackItalic,
+    900,
+    italic,
+    ttf
+);

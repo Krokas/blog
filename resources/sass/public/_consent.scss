@@ -1,3 +1,4 @@
+@use "sass:math";
 @import "mixins";
 $consent-padding: 2rem;
 
@@ -13,7 +14,7 @@ $consent-padding: 2rem;
 
     @include mobile {
         width: calc(100% - (#{$consent-padding}));
-        padding: $consent-padding / 2;
+        padding: math.div($consent-padding, 2);
     }
 
     &--visible {
