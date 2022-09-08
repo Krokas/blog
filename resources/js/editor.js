@@ -7,6 +7,7 @@ import "tinymce/skins/content/default/content.css";
 import "tinymce/plugins/autoresize/plugin";
 import "tinymce/plugins/link/plugin";
 import "tinymce/plugins/code/plugin";
+import "tinymce/plugins/table/plugin";
 import { getImageGallery } from "./images";
 
 const styleFormats = [
@@ -57,11 +58,12 @@ tinymce.init({
     selector: "textarea",
     theme: "silver",
     menubar: false,
-    plugins: "autoresize link custom-image code",
+    plugins: "autoresize link custom-image code table",
     toolbar:
-        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent | custom-image code",
+        "undo redo | styleselect | bold italic link | alignleft aligncenter alignright alignjustify | outdent indent | custom-image code table",
     min_height: 200,
     style_formats: styleFormats,
+    content_css: "document",
     default_link_target: "_blank",
     setup: (editor) => {
         editor.on("keyup", () => {
